@@ -26,8 +26,8 @@ def processRequest(req):
 def makeWebhookResult():
     speech ="hot"
     return {
-        "speech": speech,
-        "displayText": speech,
+        "fulfillmentText": speech,
+        #"displayText": speech,
         #"data": {"slack": slack_message, "facebook": facebook_message},
         # "contextOut": [],
         "source": "apiai-weather-webhook-sample"
