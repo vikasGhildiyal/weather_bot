@@ -16,6 +16,7 @@ app = Flask(__name__)
 def webhook():
     req = request.get_json(silent=True, force=True)
     res = processRequest(req)
+    res =res.json()	
     res = json.dumps(res, indent=4)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
@@ -28,8 +29,6 @@ def makeWebhookResult():
     return {
         "speech": speech,
         "displayText": speech,
-        #"data": {"slack": slack_message, "facebook": facebook_message},
-        # "contextOut": [],
         "source": "apiai-weather-webhook-sample"
     }
 if __name__ == '__main__':
