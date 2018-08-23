@@ -15,8 +15,12 @@ app = Flask(__name__)
 @app.route('/webhook', methods=['POST'])
 def webhook():
     req = request.get_json(silent=True, force=True)
+     return res.json({
+    speech: "string response",
+    displayText: "string response visible on screen",
+    source: "webhook-echo-sample"
+  });
     res = processRequest(req)
-    res =res.json()	
     res = json.dumps(res, indent=4)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
