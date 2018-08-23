@@ -28,14 +28,10 @@ def makeWebhookResult():
     return {
         "speech": speech,
         "displayText": speech,
+        #"data": {"slack": slack_message, "facebook": facebook_message},
+        # "contextOut": [],
         "source": "apiai-weather-webhook-sample"
     }
-	
-	 return res.json({
-    speech: "string response",
-    displayText: "string response visible on screen",
-    source: "webhook-echo-sample"
-  });
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
     app.run(debug=False, port=port, host='0.0.0.0')
