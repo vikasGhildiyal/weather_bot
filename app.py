@@ -40,4 +40,4 @@ def makeWebhookResult():
     }
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
-    app.run(debug=False, port=port, host='127.0.0.1')
+    app.run(debug=False, port=port, host='0.0.0.0')
